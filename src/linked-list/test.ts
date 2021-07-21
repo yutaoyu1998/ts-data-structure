@@ -15,4 +15,8 @@ export function linkedTest() {
   console.log("单链表测试环路----------");
   console.log("当前是否是环路", linkedList.isCircle() != null);
   console.log("当前是否是环路", linkedList.detectCycle() != null);
+  console.log("单链表获取中间节点----------");
+  console.log(linkedList.toString());
+  console.log('中间节点', linkedList.getMiddleNode())
+  console.log('中间节点', linkedList.getMiddleNode2())
 }

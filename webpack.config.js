@@ -7,7 +7,9 @@ const config = {
     index: './src/index.ts',
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    compress: true,
+    port: 9000,
   },
   module: {
     rules: [{
