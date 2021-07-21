@@ -19,4 +19,8 @@ export function linkedTest() {
   console.log(linkedList.toString());
   console.log('中间节点', linkedList.getMiddleNode())
   console.log('中间节点', linkedList.getMiddleNode2())
+  console.log("单链表获取倒数第n节点----------");
+  console.log(linkedList.toString());
+  console.log('倒数第四个节点', linkedList.getReverseNode(4))
+  console.log('倒数第六个节点', linkedList.getReverseNode(6))
 }
