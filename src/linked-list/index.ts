@@ -138,8 +138,8 @@ export default class LinkedList<T> {
     return slow;
   }
 
-  // 获取倒数第n个节点
-  getReverseNode(index: number){
+  // 删除倒数第n个节点
+  delReverseNode(index: number){
     if(index > this.size()){
       return null;
     }
@@ -148,11 +148,13 @@ export default class LinkedList<T> {
     for(let i = 0; i < index; i++){
       first = first.next;
     }
-    while(first != null){
+    while(first.next != null){
       first = first.next;
       second = second.next;
     }
-    return second;
+    const node = second.next;
+    second.next = node.next
+    return node;
   }
 
   size() {
