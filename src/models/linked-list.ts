@@ -7,8 +7,8 @@ export class Node<T> {
 export class DoubleNode<T> extends Node<T> {
   constructor(
     public element: T,
-    public prev: DoubleNode<T>,
-    public next: DoubleNode<T>
+    public prev?: DoubleNode<T>,
+    public next?: DoubleNode<T>
   ) {
     super(element, next);
   }

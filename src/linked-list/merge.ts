@@ -22,7 +22,7 @@ export class ListNode<T>{
     this.next = next || null;
   }
 }
-export function mergeTwoLists(l1: any, l2: any) {
+export function mergeTwoLists(l1: ListNode<number>, l2: ListNode<number>) {
   let dummy = new ListNode(0, null);
   let current: ListNode<number> = dummy;
   while(l1 != null && l2 !=null){
