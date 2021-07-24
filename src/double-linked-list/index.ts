@@ -6,7 +6,7 @@ import { defaultEquals, IEqualsFunction } from "../util";
 import LinkedList from "../linked-list";
 import { DoubleNode } from "../models/linked-list";
 
-export class DoubleLinkedList<T> extends LinkedList<T> {
+export default class DoubleLinkedList<T> extends LinkedList<T> {
   protected head: DoubleNode<T> | undefined;
   protected tail: DoubleNode<T> | undefined;
 
@@ -80,7 +80,9 @@ export class DoubleLinkedList<T> extends LinkedList<T> {
         this.tail.prev = current.prev;
         this.tail.next = undefined;
       } else {
+        // debugger;
         const previous = this.getElementAt(index - 1);
+        console.log('previous', previous)
         current = previous.next;
         previous.next = current.next;
         current.next.prev = previous;
@@ -120,13 +122,26 @@ export class DoubleLinkedList<T> extends LinkedList<T> {
 
   toString() {
     if (this.head == null) {
-      return '';
+      return "";
     }
     let objString = `${this.head.element}`;
     let current = this.head.next;
     while (current != null) {
       objString = `${objString},${current.element}`;
       current = current.next;
+    }
+    return objString;
+  }
+
+  inverseToString() {
+    if (this.tail == null) {
+      return "";
+    }
+    let objString = `${this.tail.element}`;
+    let previous = this.tail.prev;
+    while (previous != null) {
+      objString = `${objString},${previous.element}`;
+      previous = previous.prev;
     }
     return objString;
   }

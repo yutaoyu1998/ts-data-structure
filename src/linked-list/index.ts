@@ -30,12 +30,13 @@ export default class LinkedList<T> {
 
   // 返回第index个元素
   getElementAt(index: number) {
+    // debugger
     if (index >= 0 && index <= this.count) {
-      let node = this.head;
-      for (let i = 0; i < this.count && node !== null; i++) {
-        node = node.next;
+      let dummy = new Node(null, this.head);
+      for (let i = 0; i < index && dummy != null; i++) {
+        dummy = dummy.next;
       }
-      return node;
+      return dummy;
     }
     return undefined;
   }
@@ -139,21 +140,21 @@ export default class LinkedList<T> {
   }
 
   // 删除倒数第n个节点
-  delReverseNode(index: number){
-    if(index > this.size()){
+  delReverseNode(index: number) {
+    if (index > this.size()) {
       return null;
     }
     let first = this.head;
     let second = this.head;
-    for(let i = 0; i < index; i++){
+    for (let i = 0; i < index; i++) {
       first = first.next;
     }
-    while(first.next != null){
+    while (first.next != null) {
       first = first.next;
       second = second.next;
     }
     const node = second.next;
-    second.next = node.next
+    second.next = node.next;
     return node;
   }
 
